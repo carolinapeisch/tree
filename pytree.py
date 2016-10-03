@@ -12,12 +12,12 @@ fifth = "`--"
 file_count = 0
 dirs_count = 0
 second_count = 0
-another_count = 0
-third_count = 0
+# another_count = 0
+# third_count = 0
 last_count = 0
 
 
-def find_last(path):
+def find_files(path):
     for root, dirs, files in os.walk(path):
         levels = root.split('/')
         rlevels = len(levels) - 1
@@ -45,8 +45,10 @@ def find_tree(path):
         global file_count
         global dirs_count
         global second_count
-        global another_count
-        global third_count
+        # global another_count
+        # global third_count
+        if no path:
+            print ("No path")
         for f in files:
             file_count += 1
             if file_count == 1:
@@ -62,6 +64,7 @@ def find_tree(path):
             second_count += 1
             if second_count == 4:
                 return third + f
+
 print(find_tree(sys.argv[1]))
 print(find_the(sys.argv[1]))
 print(find_last(sys.argv[1]))
