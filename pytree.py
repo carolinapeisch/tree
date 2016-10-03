@@ -47,8 +47,6 @@ def find_tree(path):
         global second_count
         # global another_count
         # global third_count
-        if no path:
-            print("No path")
         for f in files:
             file_count += 1
             if file_count == 1:
